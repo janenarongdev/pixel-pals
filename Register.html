@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Pixel Pals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="photo/Cat_Icon.png">
+    <style>
+body{
+    background-color: rgb(36,36,36);
+    margin: 0;
+    font-family: 'Pixelify Sans';
+}
+main {
+    flex: 1;
+    padding-bottom: 80px; /* เผื่อที่ให้ปุ่ม Back ห่างจาก footer */
+}
+main {
+  flex: 1;                 /* ดัน footer ลงล่าง */
+}
+.header-intro {
+  text-align: center;
+  color: mediumaquamarine;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 35px;
+  padding: 70px;
+  background-color: rgb(36, 36, 36);
+  background-image: url('photo/Tab_Grass_Mini16x-export.png');
+}
+
+.header-intro h1 {
+  margin: 0 0 10px 0;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.header-intro p {
+  font-size: 30px;
+  margin: 0;
+  color: white; /* หรือ mediumaquamarine ถ้าต้องการ */
+}
+nav {
+    color: white;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* ให้เนื้อหาชิดบน */
+    padding: 10px 40px 0 40px; /* ขอบบนและล่างเท่ากัน */
+    margin: 0;
+}
+.navbar {
+    font-size: 20px;
+    gap: 20px;
+    display: flex;
+    list-style: none;
+    margin: 10px 10px 10px 10px;
+}
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+.navbar a:hover {
+    color: mediumaquamarine;
+    text-shadow: 0 0 5px mediumaquamarine,
+                 0 0 10px mediumaquamarine,
+                 0 0 20px mediumaquamarine;
+}
+.brand {
+    display: flex;
+    font-size: 18px;
+    background-color:rgb(22, 22, 22);
+    margin: 10px 10px 10px 10px;
+    a:hover {
+    color: mediumaquamarine;
+    text-shadow: 0 0 5px mediumaquamarine,
+                 0 0 10px mediumaquamarine,
+                 0 0 20px mediumaquamarine;
+}
+}
+header{
+    font-family: 'Pixelify Sans';
+    color: mediumaquamarine;
+    font-size: 60px;
+    text-align: center;
+}
+.register-form {
+    background-color: rgb(22, 22, 22);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width:440px;
+    margin: 50px auto; /* กึ่งกลางแนวนอน */
+    display: flex;
+    gap:30px;
+    flex-direction: column;
+}
+.back_button {
+    text-align: center;
+    margin: 10px 20px -50px 20px;
+}
+.back_button a {
+  display: inline-block; /* ให้เป็นบล็อกขนาดพอดี */
+  padding: 10px 20px;
+  background-color: rgb(22, 22, 22);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  bottom: 80px;
+}
+.back_button a:hover {
+  background-color: #4dd4a1;
+}
+input::placeholder {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 16px;  
+  color: #aaa;
+}
+.submit-button a {
+  position:center;;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color:rgb(36, 36, 36);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  
+}
+.submit-button a:hover {
+  background-color: #4dd4a1;
+}
+.footer-content {
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    color: white;
+    font-size: 7px;
+    padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
+}
+.header-intro h1{
+  color:#4dd4a1; /* สีตัวอักษร */
+  text-shadow:
+    -4px -4px 0 rgb(255, 255, 255),
+    4px -4px 0 rgb(255, 255, 255),
+    -4px 4px 0 rgb(255, 255, 255),
+    4px 4px 0 rgb(255, 255, 255);
+}
+.header-intro p {
+  color: #000000; /* สีตัวอักษร */
+  text-shadow:
+    -2px -2px 0 rgb(255, 255, 255),
+    2px -2px 0 rgb(255, 255, 255),
+    -2px 2px 0 rgb(255, 255, 255),    
+    2px 2px 0 rgb(255, 255, 255);
+}
+/* สร้าง keyframes สำหรับ fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;   /* เริ่มจากโปร่งใส */
+  }
+  to {
+    opacity: 1;   /* จางขึ้นมาเต็มที่ */
+  }
+}
+/* ใส่ animation ให้กับ header */
+
+.header-intro {
+  animation: fadeIn 1.5s ease forwards; /* ใช้ fadeIn เป็นเวลา 1.5 วินาที */
+}
+input {
+  border-radius: 10px; /* ปรับค่าตามความโค้งที่ต้องการ */
+  padding: 8px;        /* เพิ่มพื้นที่ในกล่อง */
+  border: 1px solid #ccc; /* เส้นขอบสีเทาอ่อน */
+}
+.register-form p{
+  margin-top: -15px;
+  margin-bottom: 25px;
+}
+  </style>
+</head>
+<body>
+    <nav> 
+    <div class="brand" style="display: flex; align-items: center; gap: 12px;">
+        <a href="Animal_Shop.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
+            <h1 style="margin: 0;">Pixel Pals</h1>
+            <img src="Photo/BEarLogo.png" alt="Logo" style="height: 40px; margin-left: 10px;">
+        </a>
+         </div>
+        <ul class="navbar">
+        <li><a href="Animal_Shop.html">Home</a></li>
+        <li><a href="Register.html">Register</a></li>
+        <li><a href="Abount.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+    </ul>
+    </nav>
+   <header>
+  <div class="header-intro">
+    <h1>Register</h1>
+    <p>Register your account to get pals.</p>
+  </div>
+</header>
+    <main>
+    <form align="center" class="register-form">
+        <div class="name">
+            <label for="FirstName">NAME  </label>
+             <input placeholder="Firstname" required>
+             <input placeholder="Lastname" required>
+        </div>
+        <div class = "date">                                                                
+            <label for="date">BIRTHDAY  </label>
+            <input type="date" required>
+        </div>
+        <div>
+            <label for="gender">Gender  </label>
+            <input type="radio" name="gender">Male
+            <input type="radio" name="gender">Female
+            <input type="radio" name="gender">Other
+        </div>
+        <div>
+            <label for="email">Email  </label>
+            <input type="email" placeholder="Email address" required>
+        </div>
+        <div class="submit-button">
+            <p>After you register, you can log in to your account.</p>
+        <a href="#">Submit</a> 
+        </div>
+</form>
+<article>
+    <div class="back_button">
+        <a href="Animal_Shop.html">Back</a>
+    </div>
+</article>
+    </main>
+<footer>
+         <div class="footer-content">
+            <h1>© Copyright | BoatShop</h1>
+            <p>All rights reserved | 2023</p>
+        </div>
+</footer>
+</body>
+</html>
