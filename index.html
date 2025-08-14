@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aount | Pixel Pals</title>
+    <title>Pixel Pals</title>
     <!-- นี้คือ link font นะ-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,14 @@
     width: 100%;
     max-width: 300px;
   }
+  .type-pals {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.type-pals img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 body{
     background-color: rgb(36,36,36);
@@ -65,23 +73,26 @@ nav {
     text-shadow: 0 0 5px mediumaquamarine,
                  0 0 10px mediumaquamarine,
                  0 0 20px mediumaquamarine;
-    }
 }
-main {
-    color: white;
-    text-align: center;
-    font-size: 27px;
-    margin:5.5% 60% 5.5% 10%;
-    padding: 30px;
-    background-color: rgb(22, 22, 22);
-    border-radius: 18px;
 }
-.footer-content {
-    background-color: rgb(22, 22, 22);
+article {
     text-align: center;
     color: white;
-    font-size: 7px;
-    padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
+    font-size: 30px;
+    margin-top: -25px;
+}
+.type-pals {
+    justify-content: center;
+    gap: 150px;
+    display: flex;
+}
+.type-pals a{
+    color:inherit;
+    text-decoration: none;
+    font-size: 24px;
+}
+.type-pals img {
+  border-radius: 15px;
 }
 .outline-text {
   color: mediumaquamarine;
@@ -148,52 +159,13 @@ main {
 .header-intro {
   animation: fadeIn 1.5s ease forwards; /* ใช้ fadeIn เป็นเวลา 1.5 วินาที */
 }
-.container {
-  display: flex;
-  gap: 50px;
-  max-width: 800px;
-  max-height: 400px;
-  margin: 3.5% auto;
-  padding: 5px;
-  background-color: rgb(22, 22, 22);
-  border-radius: 18px;
-  color: white;
-  font-size: 23px;
-  text-align: middle;
-  align-items: stretch; /* ให้ความสูงเท่ากัน */
-}
-
-.text-box, .image-box {
-  flex: 1;           /* ให้ความกว้างเท่ากัน */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 18px;
-  padding: 30px;
-  background-color: rgb(22, 22, 22);
-}
-
-/* กำหนดขนาดรูปให้เต็มกล่อง */
-  .image-box {
-    position: relative;
-    max-height: 300px;
-    width: 500px;
-    height: 400px;
+.footer-content {
     background-color: rgb(22, 22, 22);
-    border-radius: 18px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 1s ease-in-out;
-  }
+    text-align: center;
+    color: white;
+    font-size: 7px;
+    padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
+}
 </style>
 </head>
 <body>
@@ -213,55 +185,45 @@ main {
 </nav>
     <header>
   <div class="header-intro">
-    <h1>About</h1>
-    <p>And this is about me</p>
+    <h1>Pixel Pals</h1>
+    <p>Welcome to our cozy Pixel Pet shop where every pixel is packed with cuteness!</p>
   </div>
 </header>
-<main class="container">
-  <div class="text-box">
-    - I created this website as a cozy little corner where adorable pixel pals can find their new homes. <br> 
-    - My goal is not only to share these cute companions but also to bring a smile to your face, brighten your day, 
-    and maybe even spark a bit of joy every time you visit.
-  </div>
-  <div class="image-box">
-    <!-- ใช้ภาพ 2 ภาพซ้อนกันเพื่อทำ fade -->
-    <img id="slideshow1" src="Photo/Bird_New_2000.png" alt="slideshow image" style="position:absolute; top:0; left:0;">
-    <img id="slideshow2" src="Photo/Bird_New_2000.png" alt="slideshow image" style="position:absolute; top:0; left:0; opacity:0;">
-  </div>
-</main>
+    <main>
+        <div ></div>
+    </main>
+    <article>
+        <div>
+             <h1 style="font-display:center; font-size: 90.5px;">
+                Type of Pals
+            </h1>
+        </div>
+        <div class="type-pals">
+            <div>
+                <a href="Aquatic_Pals.html">
+                <img src="Photo/Water-New.png" alt="Aquatic Pals">
+                <h1>Aquatic Pals</h1>
+                </a>
+            </div>
+            <div>
+                <a href="Animal_Shop.html">
+                <img src="Photo/Bird_New.png" alt="Bird Pals">
+                <h1>Bird Pals</h1>
+                </a>
+            </div>
+            <div>
+                <a href="Animal_Shop.html">
+                <img src="Photo/Mammal.png" alt="Mammal Pals">
+                <h1>Mammal Pals</h1>
+                </a>
+            </div>
+        </div>
+    </article>
     <footer>
         <div class="footer-content">
             <h1>© Copyright | BoatShop</h1>
             <p>All rights reserved | 2023</p>
         </div>
     </footer>
-<script>
-  const images = [
-    'Photo/Bird_New_2000.png',
-    'Photo/Mammal_New_2000.png',
-    'Photo/Water_New_2000.png'
-  ];
-
-  let index = 0;
-  let current = 0; // สลับภาพ 1 หรือ 2
-  const slideshow1 = document.getElementById('slideshow1');
-  const slideshow2 = document.getElementById('slideshow2');
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-
-    if (current === 0) {
-      slideshow2.src = images[index];
-      slideshow2.style.opacity = 1;
-      slideshow1.style.opacity = 0;
-      current = 1;
-    } else {
-      slideshow1.src = images[index];
-      slideshow1.style.opacity = 1;
-      slideshow2.style.opacity = 0;
-      current = 0;
-    }
-  }, 3000);
-</script>
 </body>
 </html>
