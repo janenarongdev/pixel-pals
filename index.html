@@ -10,24 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Photo/Cat_Icon.png">
     <style>
-        @media (max-width: 768px) {
-  .header-intro {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .header-img {
-    width: 100%;
-    max-width: 300px;
-  }
-  .type-pals {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
-.type-pals img:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
 body{
     background-color: rgb(36,36,36);
     margin: 0;
@@ -42,8 +24,8 @@ nav {
     background-color: rgb(22, 22, 22);
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* ให้เนื้อหาชิดบน */
-    padding: 10px 40px 0 40px; /* ขอบบนและล่างเท่ากัน */
+    align-items: center; /* ให้เนื้อหาชิดบน */
+    padding: 0px 40px 0 40px; /* ขอบบนและล่างเท่ากัน */
     margin: 0;
 }
 .navbar {
@@ -93,6 +75,10 @@ article {
 }
 .type-pals img {
   border-radius: 15px;
+}
+.type-pals img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .outline-text {
   color: mediumaquamarine;
@@ -165,13 +151,14 @@ article {
     color: white;
     font-size: 7px;
     padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
+    margin-top: 10px;
 }
 </style>
 </head>
 <body>
 <nav> 
     <div class="brand" style="display: flex; align-items: center; gap: 12px;">
-        <a href="Animal_Shop.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
+        <a href="index.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
             <h1 style="margin: 0;">Pixel Pals</h1>
             <img src="Photo/BEarLogo.png" alt="Logo" style="height: 40px; margin-left: 10px;">
         </a>

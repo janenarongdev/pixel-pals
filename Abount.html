@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aount | Pixel Pals</title>
+    <title>About | Pixel Pals</title>
     <!-- นี้คือ link font นะ-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Photo/Cat_Icon.png">
     <style>
-        @media (max-width: 768px) {
-  .header-intro {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .header-img {
-    width: 100%;
-    max-width: 300px;
-  }
-}
 body{
     background-color: rgb(36,36,36);
     margin: 0;
@@ -27,23 +17,23 @@ body{
 }
 main, header, nav, footer {
     margin: 0;
-    border-radius: 0;
+    border-radius: 0; 
 }
 nav {
     color: white;
     background-color: rgb(22, 22, 22);
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* ให้เนื้อหาชิดบน */
-    padding: 10px 40px 0 40px; /* ขอบบนและล่างเท่ากัน */
+    align-items: center; /* ให้เนื้อหาชิดบน */
+    padding: 0rem 2.5rem 0rem 2.5rem; /* ขอบบนและล่างเท่ากัน */
     margin: 0;
 }
 .navbar {
     font-size: 20px;
-    gap: 20px;
+    gap: 1.25rem;
     display: flex;
     list-style: none;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 500px;
 }
 .navbar a {
     color: inherit;
@@ -82,6 +72,7 @@ main {
     color: white;
     font-size: 7px;
     padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
+    margin-top: 105px;
 }
 .outline-text {
   color: mediumaquamarine;
@@ -103,15 +94,15 @@ main {
   text-align: center;
   color: mediumaquamarine;
   font-family: 'Pixelify Sans', sans-serif;
-  font-size: 35px;
-  padding: 70px;
-  background-color: rgb(36, 36, 36);
+  padding: 4.375rem; /* 70px -> 4.375rem */
+  font-size: 2.1875rem; /* 35px -> 2.1875rem */
+  background-color: rgb(  36, 36, 36);
   background-image: url('Photo/Tab_Grass_Mini16x-export.png');
 }
 
 .header-intro h1 {
   margin: 0 0 10px 0;
-  font-size: 60px;
+  font-size: 3.75rem; /* 60px -> 3.75rem */
   font-weight: bold;
 }
 .header-intro p {
@@ -149,57 +140,80 @@ main {
   animation: fadeIn 1.5s ease forwards; /* ใช้ fadeIn เป็นเวลา 1.5 วินาที */
 }
 .container {
-  display: flex;
-  gap: 50px;
-  max-width: 800px;
-  max-height: 400px;
-  margin: 3.5% auto;
-  padding: 5px;
-  background-color: rgb(22, 22, 22);
-  border-radius: 18px;
-  color: white;
-  font-size: 23px;
-  text-align: middle;
-  align-items: stretch; /* ให้ความสูงเท่ากัน */
+    display: flex;
+    gap: 50px;
+    max-width: 800px;   /* ไม่เกิน 800px */
+    margin: 3.5% auto;
+    padding: 5px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 18px;
+    color: white;
+    font-size: 23px;
+    align-items: stretch;
+    flex-wrap: wrap; /* เผื่อ responsive */
 }
-
-.text-box, .image-box {
+.text-box {
   flex: 1;           /* ให้ความกว้างเท่ากัน */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   border-radius: 18px;
   padding: 30px;
   background-color: rgb(22, 22, 22);
 }
-
-/* กำหนดขนาดรูปให้เต็มกล่อง */
-  .image-box {
-    position: relative;
-    max-height: 300px;
-    width: 500px;
-    height: 400px;
-    background-color: rgb(22, 22, 22);
-    border-radius: 18px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.image-box {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/3; /* รักษาสัดส่วน */
+  border-radius: 18px;
+  overflow: hidden;
+}
+.image-box img {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: opacity 1s ease-in-out;
-  }
+}
+  .container img {
+  max-width: 100%; /* ไม่ให้เกินขนาด container */
+  height: auto; /* รักษาอัตราส่วน */
+}
+  @media (max-width: 768px) {
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+    font-size: 0.8rem; /* ทำให้ตัวหนังสือเล็กลง */
+    white-space: nowrap; /* ห้ามตัดบรรทัด */
+    margin-left: -20px;
+    }
+    .header-intro {
+    padding: 2rem;
+    }
+    .container{
+      display: flex;
+      flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
+      align-items: center; /* จัดกึ่งกลาง */
+      gap: 10px; /* ระยะห่างระหว่างกล่อง */
+      margin:15px;
+      padding: 20px;
+      font-size: 18px;
+    }
+    .image-box {
+        width: 100%;          /* ให้กว้างตามหน้าจอ */
+        max-width: 400px;    /* ไม่เกิน 400px */   /* ให้สูงสัมพันธ์กับกว้าง */
+    }
+}
 </style>
 </head>
 <body>
 <nav> 
     <div class="brand" style="display: flex; align-items: center; gap: 12px;">
-        <a href="Animal_Shop.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
+        <a href="index.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
             <h1 style="margin: 0;">Pixel Pals</h1>
             <img src="Photo/BEarLogo.png" alt="Logo" style="height: 40px; margin-left: 10px;">
         </a>
@@ -225,8 +239,8 @@ main {
   </div>
   <div class="image-box">
     <!-- ใช้ภาพ 2 ภาพซ้อนกันเพื่อทำ fade -->
-    <img id="slideshow1" src="Photo/Bird_New_2000.png" alt="slideshow image" style="position:absolute; top:0; left:0;">
-    <img id="slideshow2" src="Photo/Bird_New_2000.png" alt="slideshow image" style="position:absolute; top:0; left:0; opacity:0;">
+    <img id="slideshow1" src="Photo/Bird_New_2000.png" alt="slideshow image" ; top:0; left:0;">
+    <img id="slideshow2" src="Photo/Bird_New_2000.png" alt="slideshow image" ; top:0; left:0; opacity:0;">
   </div>
 </main>
     <footer>
