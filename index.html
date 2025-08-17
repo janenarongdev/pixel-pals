@@ -153,6 +153,66 @@ article {
     padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
     margin-top: 10px;
 }
+article h1{
+    font-size: 90.5px;
+      }
+
+ @media (max-width: 768px) {
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+    font-size: 0.8rem; /* ทำให้ตัวหนังสือเล็กลง */
+    white-space: nowrap; /* ห้ามตัดบรรทัด */
+    margin-left: -20px;
+    }
+    .header-intro
+    {
+      padding: 29px;
+    }
+    .header-intro h1{
+      font-size:3rem;
+      white-space: nowrap;
+      text-align: center;
+      padding-left: -20px;
+    }
+    .header-intro p {
+      font-size: 1rem;
+      text-align: center;
+    }
+    .header-intro h1{
+  color:#4dd4a1; /* สีตัวอักษร */
+  text-shadow:
+    -2px -2px 0 rgb(255, 255, 255),
+    2px -2px 0 rgb(255, 255, 255),
+    -2px 2px 0 rgb(255, 255, 255),
+    2px 2px 0 rgb(255, 255, 255);
+}
+   article h1{
+    font-size: 55px;
+      }
+   .header-intro p {
+  color: #000000; /* สีตัวอักษร */
+  text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255),    
+    1px 1px 0 rgb(255, 255, 255);
+  }
+  .type-pals h1{
+    font-size: 25px;
+}
+  .type-pals {
+    justify-content: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.type-pals img {
+  width: 40%;
+  height:40%;
+}
+}
 </style>
 </head>
 <body>
@@ -181,7 +241,7 @@ article {
     </main>
     <article>
         <div>
-             <h1 style="font-display:center; font-size: 90.5px;">
+             <h1>
                 Type of Pals
             </h1>
         </div>

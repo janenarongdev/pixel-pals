@@ -217,6 +217,32 @@ input::placeholder {
     font-size: 18px;
     text-align: center;
 }
+ @media (max-width: 768px) {
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+    font-size: 0.8rem; /* ทำให้ตัวหนังสือเล็กลง */
+    white-space: nowrap; /* ห้ามตัดบรรทัด */
+    margin-left: -20px;
+    }
+    .header-intro{
+      padding : 32px;
+    }
+    .contact-title{
+      font-size: 55px;
+    }
+    .type-contact{
+      flex-direction: column;
+      gap: 70px;
+    }
+    .type-contact h1{
+      font-size: 19px;
+    }
+    .footer-content{
+      margin-top: 50px;
+    }
+}
   </style>
 </head>
 <body>

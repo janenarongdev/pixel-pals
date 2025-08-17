@@ -182,6 +182,56 @@ input {
   margin-top: -15px;
   margin-bottom: 25px;
 }
+ @media (max-width: 768px) {
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+    font-size: 0.8rem; /* ทำให้ตัวหนังสือเล็กลง */
+    white-space: nowrap; /* ห้ามตัดบรรทัด */
+    margin-left: -20px;
+    }
+    .header-intro h1{
+      font-size: 3rem;
+    }
+    .header-intro p{
+      font-size: 20px;
+    }.header-intro {
+      padding: 34px;
+    }
+    .header-intro h1{
+  color:#4dd4a1; /* สีตัวอักษร */
+  text-shadow:
+    -1.5px -1.5px 0 rgb(255, 255, 255),
+    1.5px -1.5px 0 rgb(255, 255, 255),
+    -1.5px 1.5px 0 rgb(255, 255, 255),
+    1.5px 1.5px 0 rgb(255, 255, 255);
+   }
+.header-intro p {
+  color: #000000; /* สีตัวอักษร */
+  text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255),    
+    1px 1px 0 rgb(255, 255, 255);
+   }
+   .register-form {
+    width: 90%;
+    padding: 10px; 
+    margin: 10px; 
+  }
+  .submit-button{
+    margin: 20px;
+  }
+   .back_button{
+    margin-top: 30px;
+  }
+  .name{
+    display: flex;
+    flex-direction: column; /* ให้ input อยู่ในแนวตั้ง */
+    gap: 10px;
+  }
+ }
   </style>
 </head>
 <body>
