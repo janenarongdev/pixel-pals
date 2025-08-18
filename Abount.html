@@ -14,6 +14,7 @@ body{
     background-color: rgb(36,36,36);
     margin: 0;
     font-family: 'Pixelify Sans';
+    animation: fadeIn 1.5s ease forwards;
 }
 main, header, nav, footer {
     margin: 0;
@@ -25,15 +26,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center; /* ให้เนื้อหาชิดบน */
-    padding: 0rem 2.5rem 0rem 2.5rem; /* ขอบบนและล่างเท่ากัน */
+    padding: 0px 40px 0 40px; /* ขอบบนและล่างเท่ากัน */
     margin: 0;
+    position: relative; /* เพื่อให้ปุ่มเมนูแฮมเบอร์เกอร์อยู่เหนือเนื้อหาอื่น */
 }
 .navbar {
     font-size: 20px;
-    gap: 1.25rem;
+    gap: 20px;
     display: flex;
     list-style: none;
-    margin: 10px 10px 10px 500px;
+    margin: 10px 10px 10px 10px;
 }
 .navbar a {
     color: inherit;
@@ -57,6 +59,10 @@ nav {
                  0 0 20px mediumaquamarine;
     }
 }
+.menu {
+  display: flex;
+  gap: 20px;
+}
 main {
     color: white;
     text-align: center;
@@ -72,7 +78,7 @@ main {
     color: white;
     font-size: 7px;
     padding: 20px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
-    margin-top: 105px;
+    margin-top: -15px;
 }
 .outline-text {
   color: mediumaquamarine;
@@ -143,7 +149,7 @@ main {
     display: flex;
     gap: 50px;
     max-width: 800px;   /* ไม่เกิน 800px */
-    margin: 3.5% auto;
+    margin: 3% auto;
     padding: 5px;
     background-color: rgb(22, 22, 22);
     border-radius: 18px;
@@ -177,6 +183,47 @@ main {
   .container img {
   max-width: 100%; /* ไม่ให้เกินขนาด container */
 }
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.ham-menu {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right:1rem;
+}
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 5px; /* ทำให้แถบมีมุมโค้ง */
+}
+/* Rotate first bar */
+  .change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+   .change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+.menu-active{
+  display: block !important;
+}
+.ham-menu {
+    display: none;
+}
   @media (max-width: 768px) {
     .brand {
     display: flex;
@@ -204,6 +251,38 @@ main {
         max-width: 400px;    /* ไม่เกิน 400px */   /* ให้สูงสัมพันธ์กับกว้าง */
         max-height: 400px;
     }
+    /*Menu Hamberger*/
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;      
+    top: 50px;               
+    right: 10px;             
+    width: 200px;            
+    background-color: rgb(36,36,36);
+    padding: 10px 0;         
+    border-radius: 8px;      
+    z-index: 1000;           
+    opacity: 0;              
+    transform: translateY(-10px); 
+    pointer-events: none;        /* ปิดการคลิกตอนซ่อน */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+  .menu li {
+    border-bottom: 1px solid #444;
+  }
+  .menu a {
+    padding: 15px 20px;
+    display: block;
+  }
+  .menu-active {
+    opacity: 1;              
+    transform: translateY(0); 
+    pointer-events: auto;       /* เปิดการคลิกตอนแสดง */
+}
+  .ham-menu {
+        display: inline-block;
+    }
 }
 </style>
 </head>
@@ -214,14 +293,21 @@ main {
             <h1 style="margin: 0;">Pixel Pals</h1>
             <img src="Photo/BEarLogo.png" alt="Logo" style="height: 40px; margin-left: 10px;">
         </a>
-    </div>
-    <ul class="navbar">
+         </div>
+        <ul class="navbar">
+      <div class = "menu" id="myMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="Register.html">Register</a></li>
         <li><a href="Abount.html">About</a></li>
         <li><a href="Contact.html">Contact</a></li>
+      </div>
     </ul>
-</nav>
+    <div class="ham-menu" onclick="toggleham(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </nav>
     <header>
   <div class="header-intro">
     <h1>About</h1>
@@ -273,6 +359,11 @@ main {
       current = 0;
     }
   }, 3000);
+  function toggleham(x) {
+    x.classList.toggle("change"); // เปลี่ยนแฮมเบอร์เกอร์
+    let myMenu = document.getElementById('myMenu');
+    myMenu.classList.toggle("menu-active"); // สลับเมนูแสดง/ซ่อน
+  }
 </script>
 </body>
 </html>
