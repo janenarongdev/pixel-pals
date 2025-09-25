@@ -25,8 +25,8 @@ nav {
     background-color: rgb(22, 22, 22);
     display: flex;
     justify-content: space-between;
-    align-items: center; /* ให้เนื้อหาชิดบน */
-    padding: 0px 40px 0 40px; /* ขอบบนและล่างเท่ากัน */
+    align-items: center; 
+    padding: 0px 40px 0 40px; 
     margin: 0;
     position: relative; /* เพื่อให้ปุ่มเมนูแฮมเบอร์เกอร์อยู่เหนือเนื้อหาอื่น */
 }
@@ -102,6 +102,14 @@ article {
     2px -2px 0 rgb(36, 36, 36),
     -2px 2px 0 rgb(36, 36, 36),
     2px 2px 0 rgb(36, 36, 36);
+}
+  .article_shadow {
+  color: white;
+  text-shadow:
+    -4px -4px 0 rgb(22, 22, 22),  
+    4px -4px 0 rgb(22, 22, 22),
+    -4px 4px 0 rgb(22, 22, 22),
+    4px 4px 0 rgb(22, 22, 22);
 }
 .header-intro {
   text-align: center;
@@ -325,7 +333,7 @@ article h1{
     <header>
   <div class="header-intro">
     <h1>Pixel Pals</h1>
-    <p>Welcome to our cozy Pixel Pet shop where every pixel is packed with cuteness!</p>
+    <p>Welcome to our cozy Pixel Pet showcase — where every pixel is packed with cuteness!</p>
   </div>
 </header>
     <main>
@@ -333,25 +341,25 @@ article h1{
     </main>
     <article>
         <div>
-             <h1>
+             <h1 class="article_shadow">
                 Type of Pals
             </h1>
         </div>
         <div class="type-pals">
             <div>
-                <a href="Aquatic_Pals.html">
+                <a href="Aquctic_Pals.html">
                 <img src="Photo/Water-New.png" alt="Aquatic Pals">
                 <h1>Aquatic Pals</h1>
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href="Bird_Pals.html">
                 <img src="Photo/Bird_New.png" alt="Bird Pals">
                 <h1>Bird Pals</h1>
                 </a>
             </div>
             <div>
-                <a href="#">
+                <a href="Mammal_Pals.html">
                 <img src="Photo/Mammal.png" alt="Mammal Pals">
                 <h1>Mammal Pals</h1>
                 </a>

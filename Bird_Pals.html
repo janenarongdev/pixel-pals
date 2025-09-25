@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird pals</title>
+    <!-- นี้คือ link font นะ-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Photo/Cat_Icon.png">
+    <style>
+body{
+    background-color: rgb(36,36,36);
+    margin: 0;
+    font-family: 'Pixelify Sans';
+    animation: fadeIn 1.5s ease forwards;
+}
+main, header, nav, footer {
+    margin: 0;
+    border-radius: 0;
+}
+nav {
+    color: white;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0px 40px 0 40px; 
+    margin: 0;
+    position: relative;
+}
+.navbar {
+    font-size: 20px;
+    gap: 20px;
+    display: flex;
+    list-style: none;
+    margin: 10px;
+}
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+.navbar a:hover {
+    color: mediumaquamarine;
+    text-shadow: 0 0 5px mediumaquamarine,
+                 0 0 10px mediumaquamarine,
+                 0 0 20px mediumaquamarine;
+}
+.brand {
+    display: flex;
+    font-size: 18px;
+    background-color:rgb(22, 22, 22);
+    margin: 10px;
+}
+.card-container {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 60px;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  flex: 0 0 320px;
+  max-width: 320px;
+  height: 350px;
+  transition: flex 1s ease, opacity 0.2s ease, height 1s ease;
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+}
+.card img {
+  width:100%;
+  height: 180px;        
+  object-fit: cover;
+  max-height: 180px;
+}
+.card-container.active .card:not(:hover) {
+  opacity: 0.2;
+  flex: 0 0 320px; 
+  padding: 15px;
+  transition: opacity 1s, transform 1s;
+}
+.card-container .card:hover {
+  opacity: 1;
+  pointer-events: auto;
+  flex: 0 0 320px;
+  height: auto;
+  padding: 16px;
+  transform: scale(1.5); /* เพิ่มขนาดขึ้นเล็กน้อย */
+  transition: opacity 1s, transform 1s;
+}
+article {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-top: -25px;
+}
+.type-pals {
+    justify-content: center;
+    gap: 150px;
+    display: flex;
+}
+.type-pals a{
+    color:inherit;
+    text-decoration: none;
+    font-size: 24px;
+}
+.type-pals img {
+  border-radius: 15px;
+  width: 180px;
+  height: 180px;
+}
+.type-pals img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.type-pals h1{
+  font-size: 28px;
+}
+.header-intro {
+  text-align: center;
+  color: mediumaquamarine;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 35px;
+  padding: 53px;
+  background-color: rgb(36, 36, 36);
+  background-image: url('Photo/Tab_Sky_Mini16x-export.png');
+}
+.header-intro h1 {
+  margin: 0 0 10px 0;
+  font-size: 60px;
+  font-weight: bold;
+  color:rgb(95, 183, 255);
+  text-shadow:
+    -4px -4px 0 rgb(255, 255, 255),
+    4px -4px 0 rgb(255, 255, 255),
+    -4px 4px 0 rgb(255, 255, 255),
+    4px 4px 0 rgb(255, 255, 255);
+}
+.header-intro p {
+  font-size: 25px;
+  color: #000000;
+  text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255),    
+    1px 1px 0 rgb(255, 255, 255);
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.header-intro { animation: fadeIn 1.5s ease forwards; }
+.footer-content {
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    color: white;
+    font-size: 7px;
+    padding: 20px 0;
+    margin-top: 70px;
+}
+.menu {
+  display: flex;
+  gap: 20px;
+}
+article h1{
+    font-size: 90.5px;
+}
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+.ham-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right:1rem;
+}
+.change .bar1 { transform: translate(0, 11px) rotate(-45deg); }
+.change .bar2 { opacity: 0; }
+.change .bar3 { transform: translate(0, -11px) rotate(45deg); }
+.menu-active { display: block !important; }
+
+/*responsive*/
+@media (max-width: 768px) {
+    .brand { font-size: 0.8rem; }
+    .header-intro { padding: 29px; }
+    .header-intro h1 { font-size:3rem; text-align:center; }
+    .header-intro p { font-size:1rem; text-align:center; }
+    article h1 { font-size: 55px; }
+    .type-pals { flex-direction: column; gap: 20px; }
+    .type-pals img { width: 40%; height:40%; }
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;      
+        top: 50px;               
+        right: 10px;             
+        width: 200px;            
+        background-color: rgb(36,36,36);
+        padding: 10px 0;         
+        border-radius: 8px;      
+        z-index: 1000;           
+        opacity: 0;              
+        transform: translateY(-10px); 
+        pointer-events: none;      
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .card-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+    background: transparent !important;
+  }
+  .card {
+    flex: 1 1 100% !important;
+    width: 92vw !important;
+    max-width: 320px !important;
+    margin: 0 auto 30px auto !important;
+    padding: 15px !important;
+    background: white !important;
+    border-radius: 16px !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .card-container.active .card:not(:hover),
+  .card-container.active .card:not(:hover) .card-body,
+  .card-container.active .card:not(:hover) {
+    flex: 1 1 100% !important;
+    opacity: 1 !important;
+    background: white !important;
+    border-radius: 16px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 15px !important;
+    pointer-events: auto !important;
+  }
+  .menu li { border-bottom: 1px solid #444; }
+  .menu a { padding: 15px 20px; display: block; }
+  .menu-active { opacity:1; transform:translateY(0); pointer-events:auto; }
+  .ham-menu { display: inline-block; 
+    }
+}
+</style>
+</head>
+<body>
+  <audio id="cardSound" src="Sound/animal-crossing-confirm.mp3"></audio>
+<nav> 
+    <div class="brand" style="display: flex; align-items: center; gap: 12px;">
+        <a href="index.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
+            <h1 style="margin: 0;">Pixel Pals</h1>
+            <img src="Photo/BEarLogo.png" alt="Logo" style="height: 40px; margin-left: 10px;">
+        </a>
+    </div>
+    <ul class="navbar">
+      <div class="menu" id="myMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Register.html">Register</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </div>
+    </ul>
+    <div class="ham-menu" onclick="toggleham(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</nav>
+<header>
+  <div class="header-intro">
+    <h1>Bird Pals</h1>
+    <p>Meet the Bird Pals — cheerful little pixel friends who chirp happiness and flutter right into your heart!</p>
+  </div>
+</header>
+<div class="card-container">
+    <div class="card">
+      <img src="Photo/Duck_2000.png" alt="Duck">
+      <div class="card-body">
+        <h2>Duck</h2>
+        <p>A cheerful little quacker who loves splashing in ponds and waddling around. Friendly, curious, and always full of joy.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="Photo/Eagle_2000.png" alt="Eagle">
+      <div class="card-body">
+        <h2>Eagle</h2>
+        <p>A brave sky explorer who loves soaring high and feeling the wind rush by. Always curious and ready for adventure.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="Photo/Penguin_2000.png" alt="Penguin">
+      <div class="card-body">
+        <h2>Penguin</h2>
+        <p>A waddling snow buddy who loves sliding on ice and huddling with friends. Cute, clumsy, and full of heart.
+      </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-content">
+        <h1>© Copyright | BoatShop</h1>
+        <p>All rights reserved | 2023</p>
+    </div>
+</footer>
+<script>
+function toggleham(x) {
+    x.classList.toggle("change");
+    let myMenu = document.getElementById('myMenu');
+    myMenu.classList.toggle("menu-active");
+}
+
+
+const cardContainer = document.querySelector('.card-container');
+const cards = document.querySelectorAll('.card');
+const cardSound = document.getElementById('cardSound');
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    if (!isMobile()) {
+      cardContainer.classList.add('active');
+      cardSound.currentTime = 0;
+      cardSound.play();
+    }
+  });
+  card.addEventListener('mouseleave', () => {
+    if (!isMobile()) {
+      cardContainer.classList.remove('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
