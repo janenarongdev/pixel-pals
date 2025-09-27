@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquatic Pals</title>
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Photo/Cat_Icon.png">
+    <style>
+body{
+    background-color: rgb(36,36,36);
+    margin: 0;
+    font-family: 'Pixelify Sans';
+    animation: fadeIn 1.5s ease forwards;
+}
+main, header, nav, footer { margin: 0; border-radius: 0; }
+
+nav {
+    color: white;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0px 40px; 
+    margin: 0;
+    position: relative;
+}
+
+.navbar {
+    font-size: 20px;
+    gap: 20px;
+    display: flex;
+    list-style: none;
+    margin: 10px;
+}
+.navbar a { color: inherit; text-decoration: none; }
+.navbar a:hover {
+    color: mediumaquamarine;
+    text-shadow: 0 0 5px mediumaquamarine,
+                 0 0 10px mediumaquamarine,
+                 0 0 20px mediumaquamarine;
+}
+
+.brand {
+    display: flex;
+    font-size: 18px;
+    background-color: rgb(22,22,22);
+    margin: 10px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  flex: 0 0 200px;
+  height: 300px;           /* ใช้ height แบบคงที่ */
+  /* min-height: 300px;    <-- ลบบรรทัดนี้ออก */
+  transition: flex 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-body, .extra-info {
+  transition: opacity 0.3s ease;
+}
+
+.card-container:hover .card:not(:hover) {
+  flex: 0 0 20px;
+  opacity: 0.1;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+  height: 60px !important;      /* ลดความสูง */
+  min-height: 0 !important;     /* บังคับ min-height เป็น 0 */
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.card-container .card:hover {
+  flex: 0 0 400px;       /* ขยายการ์ดตัวที่ hover เฉพาะ width */
+  opacity: 1;
+}
+.card-container:hover .card:not(:hover) img {
+  height: 0 !important;
+  opacity: 0 !important;
+  padding: 0 !important;
+}
+
+.card-container:hover .card:not(:hover) .card-body,
+.card-container:hover .card:not(:hover) .extra-info {
+  opacity: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.card-container .card:hover .card-body,
+.card-container .card:hover .extra-info {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.extra-info {
+  height: auto;
+  padding: 0 16px;
+  color: #4dd4a1;
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+
+/* header */
+.header-intro {
+  text-align: center;
+  color: mediumaquamarine;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 35px;
+  padding: 70px;
+  background-color: rgb(36, 36, 36);
+  background-image: url('Photo/Tab_Grass_Mini16x-export.png');
+}
+.header-intro h1 { margin: 0 0 10px 0; font-size: 60px; color:#4dd4a1; font-weight:bold; text-shadow:-4px -4px 0 #fff,4px -4px 0 #fff,-4px 4px 0 #fff,4px 4px 0 #fff; }
+.header-intro p { font-size: 30px; margin: 0; color: #000; text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff; }
+
+/* footer */
+.footer-content {
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    color: white;
+    font-size: 7px;
+    padding: 20px 0;
+    margin-top: 45px;
+}
+
+/* hamburger */
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.ham-menu {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right:1rem;
+}
+
+.change .bar1 { transform: translate(0, 11px) rotate(-45deg); }
+.change .bar2 { opacity: 0; }
+.change .bar3 { transform: translate(0, -11px) rotate(45deg); }
+.menu-active { display: block !important; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .header-intro { padding: 29px; }
+  .header-intro h1 { font-size: 3rem; white-space: nowrap; text-align: center; }
+  .header-intro p { font-size: 1rem; text-align: center; }
+
+  .card-container { flex-direction: column; align-items: center; gap: 20px; }
+  .card { flex: 0 0 90%; height: 300px; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+    </style>
+</head>
+<body>
+<nav> 
+    <div class="brand" style="display: flex; align-items: center; gap: 12px;">
+        <a href="index.html" style="color:white; text-decoration:none; display: flex; align-items: center;">
+            <h1 style="margin: 0;">Pixel Pals</h1>
+            <img src="Photo/BEarLogo.png" alt="Logo" style="height: 40px; margin-left: 10px;">
+        </a>
+    </div>
+    <ul class="navbar">
+      <div class = "menu" id="myMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Register.html">Register</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </div>
+    </ul>
+    <div class="ham-menu" onclick="toggleham(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+</nav>
+
+<header>
+  <div class="header-intro">
+    <h1>Aquatic Pals</h1>
+    <p>Dive into a tiny ocean of cuteness — meet our Aquatic Pals, little pixel friends who love to splash joy into your day!</p>
+  </div>
+</header>
+
+<div class="card-container">
+  <div class="card">
+    <img src="Photo/Squit_2000.png" alt="Squid">
+    <div class="card-body">
+      <h2>Squit</h2>
+      <p>A tiny, playful squid who loves to squirt around and explore every corner of the coral reef. Curious, clever, and always full of surprises!</p>
+    </div>
+    <div class="extra-info">
+      <p>Speed: 8 / 10</p>
+      <p>Agility: 9 / 10</p>
+      <p>Special: Ink Blast</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="Photo/Clown_Fish_2000.png" alt="Finley the Clownfish">
+    <div class="card-body">
+      <h2>Clown Fish</h2>
+      <p>A cheerful clownfish who loves making friends and playing hide-and-seek among the anemones. Always brightens up the reef with its happy spirit!</p>
+    </div>
+    <div class="extra-info">
+      <p>Speed: 7 / 10</p>
+      <p>Charm: 10 / 10</p>
+      <p>Special: Hide & Seek</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="Photo/Shrimp_2000.png" alt="Coral the Seahorse">
+    <div class="card-body">
+      <h2>Shrimp</h2>
+      <p>A hardworking little shrimp, always busy tidying up the sea floor. Small but mighty, bringing sparkle and order to its watery world.</p>
+    </div>
+    <div class="extra-info">
+      <p>Speed: 6 / 10</p>
+      <p>Strength: 7 / 10</p>
+      <p>Special: Tiny Grab</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+      <h1>© Copyright | BoatShop</h1>
+      <p>All rights reserved | 2023</p>
+  </div>
+</footer>
+
+<script>
+function toggleham(x) {
+    x.classList.toggle("change"); 
+    let myMenu = document.getElementById('myMenu');
+    myMenu.classList.toggle("menu-active");
+}
+</script>
+</body>
+</html>

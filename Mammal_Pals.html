@@ -187,7 +187,54 @@ article h1{
 .change .bar2 { opacity: 0; }
 .change .bar3 { transform: translate(0, -11px) rotate(45deg); }
 .menu-active { display: block !important; }
-
+.next-btn-right {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(22, 22, 22);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size:80px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+  position: fixed;   
+  top: 60%;         
+  right: 80px;      
+  transform: translateY(-50%); 
+  z-index: 1000;   
+}
+.next-btn-right:hover {
+  background-color: rgb(240, 240, 240);
+  transform: translateY(-50%) scale(1.2);
+}
+.next-btn-left {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(22, 22, 22);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size:80px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+  position: fixed;   
+  top: 60%;         
+  left: 80px;      
+  transform: translateY(-50%); 
+  z-index: 1000;   
+}
+.next-btn-left:hover {
+  background-color: rgb(240, 240, 240);
+  transform: translateY(-50%) scale(1.2);
+}
 /*responsive*/
 @media (max-width: 768px) {
     .brand { font-size: 0.8rem; }
@@ -305,6 +352,10 @@ article h1{
         <p>A playful water buddy who loves floating on its back, holding hands, and turning every splash into fun.
       </div>
     </div>
+    <button class= "next-btn-left" onclick="window.location.href='Bird_Pals.html'">⬅
+    </button>
+    <button class= "next-btn-right" onclick="window.location.href='Aquctic_Pals.html'">➡
+    </button>
 </div>
 <footer>
     <div class="footer-content">
