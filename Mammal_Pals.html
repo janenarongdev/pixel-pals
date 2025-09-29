@@ -51,7 +51,13 @@ nav {
     display: flex;
     font-size: 18px;
     background-color:rgb(22, 22, 22);
-    margin: 10px;
+    margin: 10px 10px 10px 10px;
+    a:hover {
+    color: mediumaquamarine;
+    text-shadow: 0 0 5px mediumaquamarine,
+                 0 0 10px mediumaquamarine,
+                 0 0 20px mediumaquamarine;
+    }
 }
 .card-container {
   display: flex;
@@ -237,9 +243,23 @@ article h1{
 }
 /*responsive*/
 @media (max-width: 768px) {
-    .brand { font-size: 0.8rem; }
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อ */
+    font-size: 0.8rem; /* ทำให้ตัวหนังสือเล็กลง */
+    white-space: nowrap; /* ห้ามตัดบรรทัด */
+    margin-left: -20px;
+    }
     .header-intro { padding: 29px; }
-    .header-intro h1 { font-size:3rem; text-align:center; }
+    .header-intro h1 { 
+      font-size:2.1rem; 
+      text-align:center;
+       text-shadow:
+    -2px -2px 0 rgb(255, 255, 255),
+    2px -2px 0 rgb(255, 255, 255),
+    -2px 2px 0 rgb(255, 255, 255),
+    2px 2px 0 rgb(255, 255, 255);} 
     .header-intro p { font-size:1rem; text-align:center; }
     article h1 { font-size: 55px; }
     .type-pals { flex-direction: column; gap: 20px; }
@@ -267,6 +287,15 @@ article h1{
     margin-top: 30px;
     background: transparent !important;
   }
+  .card-container .card:hover {
+  opacity: 1;
+  pointer-events: auto;
+  flex: 0 0 320px;
+  height: auto;
+  padding: 16px;
+  transform: scale(1); /* เพิ่มขนาดขึ้นเล็กน้อย */
+  transition: opacity 1s, transform 1s;
+}
   .card {
     flex: 1 1 100% !important;
     width: 92vw !important;
@@ -298,6 +327,13 @@ article h1{
   .menu-active { opacity:1; transform:translateY(0); pointer-events:auto; }
   .ham-menu { display: inline-block; 
     }
+     .next-btn-right,.next-btn-left {
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 1515px;
+  }
 }
 </style>
 </head>
